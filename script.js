@@ -170,14 +170,14 @@ function confirmarPresenca() {
 }
 
 function copiarPix() {
-    const chave = "5531990631870";
+    const chave = "553191564030";
     navigator.clipboard.writeText(chave);
     alert("Chave PIX copiada!");
 }
 
 // COUNTDOWN
 function atualizarContagem() {
-    const dataDoEvento = new Date('2028-04-11T16:30:00').getTime();
+    const dataDoEvento = new Date('2026-04-11T16:30:00').getTime();
     const agora = new Date().getTime();
     const diferenca = dataDoEvento - agora;
 
@@ -202,3 +202,4 @@ window.onclick = function(event) {
         fecharModal();
     }
 }
+
