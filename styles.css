@@ -1,0 +1,850 @@
+/* RESET GLOBAL - Remove margens e paddings padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura/altura */
+}
+
+/* ESTILOS DO BODY - Configurações gerais da página */
+body {
+    font-family: 'Old Standard TT', serif; /* Define a fonte padrão */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    color: #333; /* Cor do texto padrão */
+    overflow-x: hidden; /* Remove scroll horizontal */
+    scroll-behavior: smooth; /* Scroll suave entre seções */
+}
+
+/* ========== MENU INDEX ========== */
+/* Container do menu de navegação */
+.index-menu {
+    position: fixed; /* Fica fixo no viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(107, 84, 65, 0.95), rgba(139, 127, 83, 0.95)); /* Fundo com gradiente */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    z-index: 1000; /* Fica acima de tudo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border-bottom: 3px solid #d4af37; /* Borda dourada */
+}
+
+/* Container interno do menu */
+.menu-container {
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+    padding: 0 20px; /* Espaçamento lateral */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaça os itens */
+}
+
+/* Título do menu */
+.menu-title {
+    font-size: 1.5rem; /* Tamanho do título */
+    font-weight: bold; /* Texto em negrito */
+    color: #d4af37; /* Cor dourada */
+    font-family: 'Parisienne', cursive; /* Fonte elegante */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Lista de itens do menu */
+.menu-list {
+    display: flex; /* Usa flexbox */
+    list-style: none; /* Remove bullets */
+    gap: 30px; /* Espaçamento entre itens */
+}
+
+/* Links do menu */
+.menu-list a {
+    color: #F5E6D3; /* Cor bege claro */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    font-weight: 500; /* Peso médio */
+    transition: all 0.3s ease; /* Transição suave */
+    padding: 15px 10px; /* Espaçamento interno */
+    border-bottom: 2px solid transparent; /* Borda invisível para animação */
+}
+
+/* Hover dos links do menu */
+.menu-list a:hover {
+    color: #d4af37; /* Muda para dourado */
+    border-bottom-color: #d4af37; /* Borda dourada aparece */
+    transform: translateY(-2px); /* Move ligeiramente para cima */
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+    .menu-list {
+        gap: 15px; /* Espaçamento menor em telas pequenas */
+    }
+    
+    .menu-list a {
+        font-size: 0.9rem; /* Fonte menor */
+        padding: 10px 8px; /* Padding menor */
+    }
+    
+    .menu-title {
+        font-size: 1.2rem; /* Título menor */
+    }
+}
+
+/* ========== SEÇÃO HERO ========== */
+/* Container principal da seção hero */
+.hero {
+    min-height: 100vh; /* Altura mínima de uma viewport */
+    background: url('imagem (5).jpeg') center/cover; /* Imagem de fundo centralizada */
+    display: flex; /* Usa flexbox para alinhamento */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Texto centralizado */
+    padding: 20px; /* Espaçamento interno */
+    padding-top: 100px; /* Espaço para o menu fixo */
+    position: relative; /* Base para elementos posicionados absolutamente */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+}
+
+/* Overlay escuro na seção hero */
+.hero::before {
+    content: ''; /* Cria um pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Cobre toda a área */
+    background: rgba(107, 84, 65, 0.5); /* Cor marrom semi-transparente */
+    backdrop-filter: blur(4px); /* Aplica desfoque ao fundo */
+    z-index: 1; /* Fica atrás do conteúdo */
+}
+
+/* Decoração circular animada no hero */
+.hero::after {
+    content: ''; /* Cria um pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: -30%; /* Posiciona na parte inferior */
+    left: -30%; /* Posiciona à esquerda */
+    width: 400px; /* Largura do círculo */
+    height: 400px; /* Altura do círculo */
+    background: rgba(139, 127, 83, 0.2); /* Cor semi-transparente */
+    border-radius: 50%; /* Faz um círculo perfeito */
+    animation: float 8s ease-in-out infinite reverse; /* Aplica animação flutuante */
+}
+
+/* Animação de flutuação */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); } /* Variação de movimento vertical */
+    50% { transform: translateY(20px); } /* Movimento no meio da animação */
+}
+
+/* Container do conteúdo do hero */
+.hero-content {
+    position: relative; /* Posicionamento relativo */
+    z-index: 2; /* Fica acima do overlay */
+    animation: fadeInUp 1s ease-out; /* Aplica animação de entrada */
+}
+
+/* Animação de fade in com movimento para cima */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Começa invisível */
+        transform: translateY(30px); /* Começa 30px abaixo */
+    }
+    to {
+        opacity: 1; /* Fica visível */
+        transform: translateY(0); /* Posição final normal */
+    }
+}
+
+/* Título principal do hero */
+.hero h1 {
+    font-size: 5.5rem; /* Tamanho grande do título */
+    font-weight: 700; /* Peso da fonte (bold) */
+    color: #F5E6D3; /* Cor bege claro */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra no texto */
+    position: relative; /* Posicionamento relativo */
+    z-index: 2; /* Acima do overlay */
+    font-family: 'Parisienne', cursive; /* Fonte cursiva elegante */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+/* Linha divisória decorativa */
+.divider {
+    width: 100px; /* Largura da linha */
+    height: 3px; /* Altura da linha */
+    background: linear-gradient(90deg, #E35336, #F0574D); /* Gradiente de cores */
+    margin: 15px auto; /* Centraliza com espaçamento */
+}
+
+/* Parágrafo do hero */
+.hero p {
+    font-size: 2.3rem; /* Tamanho do texto */
+    color: #F5E6D3; /* Cor bege claro */
+    font-weight: 300; /* Peso leve */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+    position: relative; /* Posicionamento relativo */
+    z-index: 2; /* Acima do overlay */
+    font-family: 'Great Vibes', cursive; /* Fonte cursiva decorativa */
+}
+
+/* Data do casamento no hero */
+.hero-date {
+    margin-top: 30px; /* Espaçamento superior */
+    font-size: 1.5rem; /* Tamanho do texto */
+    color: #F5E6D3; /* Cor bege claro */
+    font-weight: 500; /* Peso médio */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+    position: relative; /* Posicionamento relativo */
+    z-index: 2; /* Acima do overlay */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Título da contagem regressiva */
+.countdown-title {
+    font-size: 1.5rem; /* Tamanho do texto */
+    color: #F5E6D3; /* Cor bege claro */
+    margin-top: 40px; /* Espaçamento superior */
+    font-weight: 600; /* Peso semi-bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Container da contagem regressiva */
+.countdown {
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaço entre itens */
+    margin-top: 30px; /* Espaçamento superior */
+    flex-wrap: wrap; /* Quebra linhas em telas pequenas */
+}
+
+/* Item individual da contagem regressiva */
+.countdown-item {
+    background: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    padding: 20px 25px; /* Espaçamento interno */
+    border-radius: 12px; /* Cantos arredondados */
+    border: 2px solid #E35336; /* Borda vermelha */
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+}
+
+/* Número da contagem regressiva */
+.countdown-number {
+    font-size: 2.5rem; /* Tamanho grande */
+    font-weight: 700; /* Peso bold */
+    color: #E35336; /* Cor vermelha */
+    display: block; /* Ocupa linha inteira */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Rótulo da contagem regressiva */
+.countdown-label {
+    font-size: 0.9rem; /* Tamanho pequeno */
+    color: #F5E6D3; /* Cor bege claro */
+    text-transform: uppercase; /* Transforma em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    margin-top: 8px; /* Espaçamento superior */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Ícone de coração */
+.heart {
+    display: inline-block; /* Exibe em linha */
+    color: #C84536; /* Cor vermelha escura */
+    margin: 0 10px; /* Espaçamento lateral */
+    font-size: 1.3rem; /* Tamanho do ícone */
+}
+
+/* ========== SEÇÃO HISTÓRIA ========== */
+/* Container da seção história */
+.historia {
+    padding: 80px 20px; /* Espaçamento interno */
+    background: #fff; /* Fundo branco */
+    max-width: 1000px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza na página */
+}
+
+/* Título da seção história */
+.historia h2 {
+    font-size: 3.5rem; /* Tamanho grande */
+    color: #E35336; /* Cor vermelha */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 50px; /* Espaçamento inferior */
+    font-weight: 600; /* Peso semi-bold */
+    font-family: 'Parisienne', cursive; /* Fonte cursiva elegante */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Grid com conteúdo e imagem */
+.historia-content {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 40px; /* Espaço entre colunas */
+    align-items: center; /* Alinha verticalmente ao centro */
+}
+
+/* Texto da história */
+.historia-text {
+    font-size: 1.1rem; /* Tamanho do texto */
+    color: #000; /* Cor cinza */
+    line-height: 1.8; /* Espaçamento entre linhas */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Parágrafo do texto histórico */
+.historia-text p {
+    margin-bottom: 20px; /* Espaçamento inferior */
+    text-align: justify; /* Justifica o texto */
+}
+
+/* Texto em negrito na história */
+.historia-text strong {
+    color: #f24422; /* Cor vermelha */
+    font-weight: 600; /* Peso semi-bold */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Imagem do casal */
+.casal-foto {
+    width: 100%; /* Ocupa largura total */
+    max-width: 350px; /* Largura máxima */
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 15px 40px rgba(227, 83, 54, 0.2); /* Sombra suave */
+    border: 5px solid #E35336; /* Borda vermelha */
+    object-fit: cover; /* Adapta a imagem */
+    height: 400px; /* Altura fixa */
+}
+
+/* Decoração na história */
+.historia-decoracao {
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* SVG de decoração */
+.historia-decoracao svg {
+    width: 100%; /* Ocupa largura total */
+    max-width: 300px; /* Largura máxima */
+    opacity: 0.9; /* Transparência do elemento */
+}
+
+/* ========== SEÇÃO GALERIA CARROSSEL ========== */
+/* Container da galeria */
+.galeria-section {
+    padding: 80px 20px; /* Espaçamento interno */
+    background: #fff; /* Fundo branco */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+}
+
+/* Título da galeria */
+.galeria-section h2 {
+    font-size: 2.5rem; /* Tamanho grande */
+    color: #E35336; /* Cor vermelha */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 60px; /* Espaçamento inferior */
+    font-weight: 600; /* Peso semi-bold */
+    font-family: 'Parisienne', cursive; /* Fonte cursiva elegante */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Container do carrossel */
+.carrossel-container {
+    position: relative; /* Posicionamento relativo */
+    width: 100%; /* Ocupa largura total */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+    background: #fff; /* Fundo cinza claro */
+    border-radius: 15px; /* Cantos arredondados */
+    padding: 40px 0; /* Espaçamento interno vertical */
+}
+
+/* Carrossel com imagens */
+.carrossel {
+    display: flex; /* Usa flexbox */
+    gap: 20px; /* Espaço entre itens */
+    animation: scroll 60s linear infinite; /* Animação contínua */
+    width: fit-content; /* Ajusta ao conteúdo */
+    padding: 0 20px; /* Espaçamento interno */
+}
+
+/* Animação de scroll contínuo */
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Posição inicial */
+    }
+    100% {
+        transform: translateX(calc(-1 * (280px + 30px) * 15)); /* Move para esquerda */
+    }
+}
+
+/* Pausa na animação ao passar o mouse */
+.carrossel:hover {
+    animation-play-state: paused; /* Para a animação */
+}
+
+/* Item individual do carrossel */
+.carrossel-item {
+    flex-shrink: 0; /* Não encolhe */
+    width: 280px; /* Largura fixa */
+    height: 420px; /* Altura fixa */
+    border-radius: 15px; /* Cantos arredondados */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+    box-shadow: 0 10px 30px rgba(227, 83, 54, 0.15); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+/* Efeito ao passar mouse no item */
+.carrossel-item:hover {
+    transform: scale(1.05); /* Amplia a imagem */
+}
+
+/* Imagem do carrossel */
+.carrossel-item img {
+    width: 100%; /* Ocupa largura total */
+    height: 100%; /* Ocupa altura total */
+    object-fit: cover; /* Adapta a imagem */
+}
+
+/* ========== SEÇÃO CTA (CALL TO ACTION) ========== */
+/* Container CTA */
+.cta-section {
+    background: linear-gradient(135deg, #7a1905 0%, #aa4236 100%); /* Gradiente vermelho */
+    padding: 80px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Cor do texto branca */
+}
+
+/* Título CTA */
+.cta-section h2 {
+    font-size: 2.2rem; /* Tamanho grande */
+    margin-bottom: 30px; /* Espaçamento inferior */
+    font-weight: 600; /* Peso semi-bold */
+    font-family: 'Parisienne', cursive; /* Fonte cursiva elegante */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Parágrafo CTA */
+.cta-section p {
+    font-size: 1.1rem; /* Tamanho do texto */
+    margin-bottom: 25px; /* Espaçamento inferior */
+    line-height: 1.8; /* Espaçamento entre linhas */
+    max-width: 800px; /* Largura máxima */
+    margin-left: auto; /* Centraliza */
+    margin-right: auto; /* Centraliza */
+    font-weight: 300; /* Peso leve */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* ========== MODAL ========== */
+/* Container do modal */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed; /* Posicionamento fixo */
+    z-index: 1000; /* Fica acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa toda a tela */
+    height: 100%; /* Ocupa toda a altura */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    animation: fadeIn 0.3s; /* Animação de entrada */
+}
+
+/* Animação de fade in */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Começa invisível */
+    to { opacity: 1; } /* Fica visível */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: white; /* Fundo branco */
+    margin: 10% auto; /* Margem superior e centralização */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 15px; /* Cantos arredondados */
+    width: 90%; /* Largura responsiva */
+    max-width: 500px; /* Largura máxima */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Sombra */
+    animation: slideDown 0.3s; /* Animação de entrada */
+}
+
+/* Animação slide down */
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px); /* Começa acima */
+        opacity: 0; /* Começa invisível */
+    }
+    to {
+        transform: translateY(0); /* Posição final */
+        opacity: 1; /* Fica visível */
+    }
+}
+
+/* Título do modal */
+.modal h3 {
+    color: #E35336; /* Cor vermelha */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 2.8rem; /* Tamanho do título */
+    font-family: 'Parisienne', cursive; /* Fonte cursiva elegante */
+}
+
+/* Input de busca */
+.search-input {
+    width: 100%; /* Ocupa largura total */
+    padding: 12px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    border: 2px solid #E35336; /* Borda vermelha */
+    border-radius: 8px; /* Cantos levemente arredondados */
+    font-size: 1rem; /* Tamanho do texto */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Input em foco */
+.search-input:focus {
+    outline: none; /* Remove outline padrão */
+    border-color: #E35336; /* Mantém cor da borda */
+    box-shadow: 0 0 10px rgba(227, 83, 54, 0.2); /* Sombra ao focar */
+}
+
+/* Lista de convidados */
+.guest-list {
+    max-height: 300px; /* Altura máxima */
+    overflow-y: auto; /* Scroll vertical quando necessário */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Item da lista de convidados */
+.guest-item {
+    padding: 12px; /* Espaçamento interno */
+    border: 1px solid #e0e0e0; /* Borda cinza */
+    border-radius: 8px; /* Cantos levemente arredondados */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    cursor: pointer; /* Cursor de mão */
+    transition: all 0.3s; /* Transição suave */
+    background: #f9f9f9; /* Fundo cinza claro */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Item ao passar mouse */
+.guest-item:hover {
+    background: #f0f0f0; /* Fundo mais escuro */
+    border-color: #E35336; /* Borda vermelha */
+    transform: translateX(5px); /* Move para a direita */
+}
+
+/* Item confirmado */
+.guest-item.confirmed {
+    background: #e8f5e9; /* Fundo verde claro */
+    border-color: #4caf50; /* Borda verde */
+    opacity: 0.6; /* Mais transparente */
+    cursor: not-allowed; /* Cursor desabilitado */
+}
+
+/* Modal de confirmação */
+.confirmation-modal {
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Parágrafo do modal de confirmação */
+.confirmation-modal p {
+    font-size: 1.1rem; /* Tamanho do texto */
+    color: #333; /* Cor cinza */
+    margin-bottom: 30px; /* Espaçamento inferior */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Grupo de botões */
+.button-group {
+    display: flex; /* Usa flexbox */
+    gap: 15px; /* Espaço entre botões */
+    justify-content: center; /* Centraliza os botões */
+}
+
+/* Estilos gerais dos botões */
+.btn {
+    padding: 12px 30px; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    border-radius: 10px; /* Cantos levemente arredondados */
+    font-size: 1rem; /* Tamanho do texto */
+    font-weight: 600; /* Peso semi-bold */
+    cursor: pointer; /* Cursor de mão */
+    transition: all 0.3s; /* Transição suave */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Botão Sim */
+.btn-yes {
+    background: #4caf50; /* Fundo verde */
+    color: white; /* Texto branco */
+}
+
+/* Botão Sim ao passar mouse */
+.btn-yes:hover {
+    background: #45a049; /* Verde mais escuro */
+    transform: translateY(-2px); /* Move para cima */
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3); /* Sombra verde */
+}
+
+/* Botão Não */
+.btn-no {
+    background: #f44336; /* Fundo vermelho */
+    color: white; /* Texto branco */
+}
+
+/* Botão Não ao passar mouse */
+.btn-no:hover {
+    background: #da190b; /* Vermelho mais escuro */
+    transform: translateY(-2px); /* Move para cima */
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3); /* Sombra vermelha */
+}
+
+/* Botão Confirmar */
+.btn-confirm {
+    background: #E35336; /* Fundo laranja-vermelho */
+    color: white; /* Texto branco */
+}
+
+/* Botão Confirmar ao passar mouse */
+.btn-confirm:hover {
+    background: #C23C2A; /* Cor mais escura */
+    transform: translateY(-2px); /* Move para cima */
+}
+
+/* Botão de fechar modal */
+.close {
+    color: #aaa; /* Cor cinza claro */
+    float: right; /* Alinha à direita */
+    font-size: 28px; /* Tamanho grande */
+    font-weight: bold; /* Peso bold */
+    cursor: pointer; /* Cursor de mão */
+}
+
+/* Close ao passar mouse */
+.close:hover {
+    color: #E35336; /* Cor vermelha */
+}
+
+/* Mensagem de sucesso */
+.success-message {
+    background: #e8f5e9; /* Fundo verde claro */
+    color: #2e7d32; /* Texto verde */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    display: none; /* Inicialmente oculta */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Mensagem de erro */
+.error-message {
+    background: #ffebee; /* Fundo vermelho claro */
+    color: #c62828; /* Texto vermelho */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    display: none; /* Inicialmente oculta */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Mensagem de nenhum resultado */
+.no-results {
+    text-align: center; /* Centraliza o texto */
+    color: #999; /* Cor cinza */
+    padding: 20px; /* Espaçamento interno */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* ========== SEÇÃO PRESENTES ========== */
+/* Container principal da seção de presentes */
+.presentes-section {
+    padding: 80px 20px; /* Espaçamento interno */
+    background: linear-gradient(135deg, #f9f9f9, #f0e6d3); /* Gradiente suave */
+    text-align: center; /* Texto centralizado */
+    min-height: auto; /* Altura automática */
+}
+
+/* Título da seção de presentes */
+.presentes-section h2 {
+    font-size: 3rem; /* Tamanho grande */
+    color: #6b5441; /* Cor marrom */
+    margin-bottom: 20px; /* Espaço inferior */
+    font-family: 'Parisienne', cursive; /* Fonte elegante */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+/* Parágrafo introdutório */
+.presentes-section p {
+    font-size: 1.1rem; /* Tamanho maior */
+    color: #555; /* Cor cinza */
+    margin-bottom: 40px; /* Espaçamento inferior */
+    max-width: 600px; /* Largura máxima */
+    margin-left: auto; /* Centraliza */
+    margin-right: auto; /* Centraliza */
+}
+
+/* Grid de presentes */
+.presentes-grid {
+    display: grid; /* Usa grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo */
+    gap: 30px; /* Espaçamento entre itens */
+    max-width: 1200px; /* Largura máxima */
+    margin: 40px auto; /* Centraliza e espaça */
+}
+
+/* Card individual de presente */
+.presente-card {
+    background: white; /* Fundo branco */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: all 0.3s ease; /* Transição suave */
+    border-top: 4px solid #d4af37; /* Borda dourada no topo */
+    text-align: left; /* Texto alinhado à esquerda */
+}
+
+/* Hover do card */
+.presente-card:hover {
+    transform: translateY(-8px); /* Move para cima */
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3); /* Sombra maior com cor dourada */
+    border-top-color: #aa2b1a; /* Borda muda de cor */
+}
+
+/* Título do card */
+.presente-card h3 {
+    color: #d4af37; /* Cor dourada */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    font-size: 1.3rem; /* Tamanho maior */
+}
+
+/* Lista de itens dentro do card */
+.presente-card ul {
+    list-style: none; /* Remove bullets */
+    padding-left: 0; /* Remove padding padrão */
+}
+
+/* Item da lista */
+.presente-card li {
+    padding: 8px 0; /* Espaçamento vertical */
+    border-bottom: 1px solid #f0e6d3; /* Linha divisória sutil */
+    color: #333; /* Cor escura */
+    font-size: 0.95rem; /* Tamanho ligeiramente menor */
+}
+
+/* Último item sem borda */
+.presente-card li:last-child {
+    border-bottom: none; /* Remove borda do último item */
+}
+
+/* Observação final */
+.presentes-obs {
+    margin-top: 40px; /* Espaçamento superior */
+    font-size: 1rem; /* Tamanho normal */
+    color: #6b5441; /* Cor marrom */
+    font-style: italic; /* Itálico */
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+    .presentes-section h2 {
+        font-size: 2rem; /* Título menor */
+    }
+    
+    .presentes-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+        gap: 20px; /* Espaçamento menor */
+    }
+    
+    .presente-card {
+        padding: 20px; /* Padding menor */
+    }
+}
+
+/* ========== FOOTER ========== */
+/* Container do footer */
+.footer {
+    background: #aa2b1a; /* Fundo vermelho escuro */
+    color: #F5E6D3; /* Texto bege claro */
+    text-align:center; /* Centraliza o texto */
+    padding: 30px 20px; /* Espaçamento interno */
+    font-size: 0.95rem; /* Tamanho pequeno */
+    font-family: 'Old Standard TT', serif; /* Fonte serif tradicional */
+}
+
+/* Parágrafo do footer */
+.footer p {
+    margin: 10px 0; /* Espaçamento vertical */
+}
+
+/* Texto em negrito no footer */
+.footer strong {
+    font-family: 'Parisienne', cursive; /* Fonte cursiva elegante */
+    font-size: 1.2rem; /* Tamanho maior */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* ========== RESPONSIVO ========== */
+/* Media query para telas pequenas */
+@media (max-width: 768px) {
+    /* Título hero em telas pequenas */
+    .hero h1 {
+        font-size: 2.5rem; /* Tamanho reduzido */
+    }
+
+    /* Parágrafo hero em telas pequenas */
+    .hero p {
+        font-size: 1.1rem; /* Tamanho reduzido */
+    }
+
+    /* Número da contagem em telas pequenas */
+    .countdown-number {
+        font-size: 2rem; /* Tamanho reduzido */
+    }
+
+    /* Item countdown em telas pequenas */
+    .countdown-item {
+        padding: 15px 18px; /* Padding reduzido */
+    }
+
+    /* Grid história em uma coluna */
+    .historia-content {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+
+    /* Títulos h2 em telas pequenas */
+    .historia h2,
+    .cta-section h2 {
+        font-size: 1.8rem; /* Tamanho reduzido */
+    }
+
+    /* Parágrafo CTA em telas pequenas */
+    .cta-section p {
+        font-size: 1rem; /* Tamanho reduzido */
+    }
+
+    /* Modal em telas pequenas */
+    .modal-content {
+        width: 95%; /* Largura aumentada */
+        margin: 30% auto; /* Margem ajustada */
+    }
+
+    /* Botões em coluna em telas pequenas */
+    .button-group {
+        flex-direction: column; /* Organiza em coluna */
+    }
+
+    /* Botões ocupam largura total */
+    .btn {
+        width: 100%; /* Ocupa largura total */
+    }
+}
+
+/* Classe para animação pulse */
+.pulse {
+    animation: pulse 2s infinite; /* Animação contínua */
+}
+
+/* Animação pulse */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1; /* Totalmente visível */
+    }
+    50% {
+        opacity: 0.7; /* Mais transparente no meio */
+    }
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eder & Renata - Nosso Casamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("EdoGdHNLVaSxOqcXE");
+})();
+</script>
+
+
+
+<body>
+    <!-- MENU INDEX -->
+    <nav class="index-menu">
+        <div class="menu-container">
+            <span class="menu-title">Menu</span>
+            <ul class="menu-list">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#historia">Nossa História</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#presentes">Presentes</a></li>
+                <li><a href="#confirmacao">Confirmação</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Eder<span class="heart">❤️</span>& Renata</h1>
+            <div class="divider"></div>
+            <p>Nosso Grande Dia</p>
+            <div class="hero-date">
+                11 de Abril de 2028 às 16:30
+            </div>
+            <div class="countdown-title">O Grande Dia Está Chegando!</div>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="dias">0</span>
+                    <span class="countdown-label">Dias</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="horas">0</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutos">0</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="segundos">0</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA DO CASAL -->
+    <section class="historia" id="historia">
+        <h2>Nossa História</h2>
+        <div class="historia-content">
+            <div class="historia-text">
+                <p>
+                    <strong>O Grande dia </strong> esta chegando: a nossa união diante de <strong>Deus</strong> Queremos muito que vocês estejam conosco para celebrar esse momento único, cheio de amor, alegria e gratidão.
+                </p>
+                <p>
+                    A presença de cada um tornará esse dia ainda mais inesquecível, pois pessoas especiais fazem parte da nossa história e dos nossos sonhos.
+                </p>
+                <p>
+                    Contamos com vocês para viver juntos essa nova etapa que está começando.
+                <p>
+                    Obrigado por estarem conosco neste momento mágico!
+                </p>
+            </div>
+            <div class="historia-decoracao">
+                <img src="imagem (4).jpeg" alt="Eder e Renata" class="casal-foto">
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO GALERIA CARROSSEL -->
+    <section class="galeria-section" id="galeria">
+        <h2>Momentos do Nosso Dia</h2>
+        <div class="carrossel-container">
+            <div class="carrossel">
+                <div class="carrossel-item">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="Momento 1">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (1).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (4).jpeg" alt="Momento 1">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (5).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (1).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (4).jpeg" alt="Momento 1">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (5).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+                <!-- Duplicação para loop infinito -->
+                <div class="carrossel-item">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="Momento 1">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (1).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (4).jpeg" alt="Momento 1">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (5).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (1).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (4).jpeg" alt="Momento 1">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (5).jpeg" alt="Momento 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (2).jpeg" alt="Momento 3">
+                </div>
+                <div class="carrossel-item">
+                    <img src="imagem (3).jpeg" alt="Momento 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PRESENTES -->
+    <section class="presentes-section" id="presentes">
+        <h2>Lista de Presentes</h2>
+        <p>Agradecemos de coração se desejarem nos presentear. Aqui estão algumas sugestões:</p>
+        
+        <div class="presentes-grid">
+            <div class="presente-card">
+                <h3>🍳 Cozinha</h3>
+                <ul>
+                    <li>Jogo de panelas</li>
+                    <li>Faqueiro completo</li>
+                    <li>Jogo de copos e taças</li>
+                    <li>Batedeira ou processador</li>
+                    <li>Juicer ou liquidificador</li>
+                </ul>
+            </div>
+            
+            <div class="presente-card">
+                <h3>🛏️ Quarto</h3>
+                <ul>
+                    <li>Jogo de cama premium</li>
+                    <li>Colcha ou edredom</li>
+                    <li>Travesseiros ergonômicos</li>
+                    <li>Cortinas elegantes</li>
+                    <li>Luminárias estilosas</li>
+                </ul>
+            </div>
+            
+            <div class="presente-card">
+                <h3>🛋️ Sala</h3>
+                <ul>
+                    <li>Sofá confortável</li>
+                    <li>Mesa de centro</li>
+                    <li>Tapete decorativo</li>
+                    <li>Quadros para parede</li>
+                    <li>Luminária de piso</li>
+                </ul>
+            </div>
+            
+            <div class="presente-card">
+                <h3>🚿 Banheiro</h3>
+                <ul>
+                    <li>Jogo de toalhas premium</li>
+                    <li>Tapete de banho macio</li>
+                    <li>Acessórios em porcelana</li>
+                    <li>Espelho decorativo</li>
+                    <li>Produtos de banho luxuosos</li>
+                </ul>
+            </div>
+            
+            <div class="presente-card">
+                <h3>📺 Eletrônicos</h3>
+                <ul>
+                    <li>Smart TV</li>
+                    <li>Caixa de som Bluetooth</li>
+                    <li>Micro-ondas inteligente</li>
+                    <li>Ar condicionado</li>
+                    <li>Aspirador inteligente</li>
+                </ul>
+            </div>
+            
+            <div class="presente-card">
+                <h3>✈️ Experiências</h3>
+                <ul>
+                    <li>Voucher para viagem</li>
+                    <li>Pacote spa e relaxamento</li>
+                    <li>Aulas de culinária</li>
+                    <li>Noites em hotéis especiais</li>
+                    <li>Ingressos para eventos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="presentes-obs"><strong>💝 Obs:</strong> Qualquer presente dado com amor é especial para nós!</p>
+    </section>
+
+    <!-- CHAMADA PARA AÇÃO -->
+    <section class="cta-section" id="confirmacao">
+        <h2>Confirmar Presença</h2>
+        <p>
+            Para confirmar sua presença em nosso casamento, digite seu nome abaixo e selecione seu nome na lista. Após a confirmação, receberemos uma notificação por email.
+        </p>
+
+        <button class="btn btn-confirm" onclick="abrirModalConfirmacao()" style="padding: 18px 50px; font-size: 1.1rem; margin-top: 20px;">
+            💚 Confirmar Presença 💚
+        </button>
+    </section>
+
+    <!-- MODAL DE CONFIRMAÇÃO -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <div id="successMessage" class="success-message"></div>
+            <div id="errorMessage" class="error-message"></div>
+            
+            <div id="searchMode">
+                <h3>Encontre seu nome</h3>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="nameInput" 
+                    placeholder="Digite seu nome..."
+                    oninput="buscarConvidados()"
+                >
+                <div class="guest-list" id="guestList"></div>
+            </div>
+
+            <div id="confirmationMode" style="display: none;" class="confirmation-modal">
+                <h3 id="selectedGuestName"></h3>
+                <p>Você irá ao casamento?</p>
+                <div class="button-group">
+                    <button class="btn btn-yes" onclick="confirmarPresenca()">Sim, vou confirmar!</button>
+                    <button class="btn btn-no" onclick="voltarBusca()">Não, voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p><strong>Eder & Renata</strong></p>
+        <p>Agradecemos sua presença e amor neste dia especial</p>
+        <p style="margin-top: 20px; font-size: 0.9rem;">💕 Com todo nosso carinho 💕</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
