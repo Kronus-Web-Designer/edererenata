@@ -81,6 +81,7 @@ let convidados = [
     { id: 79, nome: "Marlene", confirmado: false },
     { id: 80, nome: "Marcio (Tio)", confirmado: false },
     { id: 81, nome: "Adriana Jaba", confirmado: false },
+    { id: 82, nome: "Luciana e Familia", confirmado: false },
 
 ];
 
